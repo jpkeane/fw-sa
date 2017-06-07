@@ -4,10 +4,11 @@
   </div>
 
   <ul class="top-nav">
-    <a href src="#" class="btn btn-info">
+    <%= link_to login_path, class: 'btn btn-info' do %>
       Log in
       <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
-    </a>
+    <% end %>
+
     <a href src="#" class="btn btn-info">
       Sign up
       <i class="zmdi zmdi-account zmdi-hc-fw"></i>

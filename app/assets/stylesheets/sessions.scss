@@ -1,0 +1,9 @@
+.content--sessions {
+  @include media-breakpoint-up(sm) {
+    padding: ($grid-gutter-width-base + 40) $grid-gutter-width-base 0;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: ($grid-gutter-width-base/2 + 40) $grid-gutter-width-base/2 0;
+  }
+}
