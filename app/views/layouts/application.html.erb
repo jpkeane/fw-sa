@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>FwSa</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
+<body data-ma-theme="blue-grey">
+<main class="main main--alt">
+  <%= render 'layouts/application/header' %>
+  <%= render 'layouts/application/right_bar' %>
+
+
+  <section class="content content--full">
+    <% if content_for(:title) %>
+      <header class="content__title">
+        <h1><%= yield(:title) %></h1>
+      </header>
+    <% end %>
+
     <%= yield %>
-  </body>
+
+    <%= render 'layouts/application/footer' %>
+  </section>
+</main>
+</body>
 </html>
