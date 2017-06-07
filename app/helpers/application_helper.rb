@@ -9,6 +9,11 @@ module ApplicationHelper
     end
   end
 
+  def active_controller?(controller_name, class_name = 'active')
+    return unless params[:controller] == controller_name
+    class_name.nil? ? 'active' : class_name
+  end
+
   def active_action?(action_name, class_name = 'active')
     return unless params[:action] == action_name
     class_name.nil? ? 'active' : class_name
