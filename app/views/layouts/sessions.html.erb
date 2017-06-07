@@ -13,12 +13,6 @@
   <%= render 'layouts/sessions/header' %>
 
   <section class="content content--sessions">
-    <% if content_for(:title) %>
-      <header class="content__title">
-        <h1><%= yield(:title) %></h1>
-      </header>
-    <% end %>
-
     <%= yield %>
 
     <%= render 'layouts/sessions/footer' %>
