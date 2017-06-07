@@ -10,4 +10,11 @@ RSpec.describe ApplicationHelper, type: :helper do
       expect(helper.full_title).to eq 'Floworx SysArch'
     end
   end
+
+  describe '#active_action?' do
+    it 'returns active when required' do
+      controller.params[:action] = 'about'
+      expect(helper.active_action?('about')).to eq 'active'
+    end
+  end
 end
