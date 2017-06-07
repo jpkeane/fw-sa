@@ -1,0 +1,27 @@
+<header class="header">
+  <div class="header__logo">
+    <h1><%= link_to 'Floworx', root_path %></h1>
+  </div>
+
+  <ul class="top-nav">
+    <a href src="#" class="btn btn-info">
+      Log in
+      <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
+    </a>
+    <a href src="#" class="btn btn-info">
+      Sign up
+      <i class="zmdi zmdi-account zmdi-hc-fw"></i>
+    </a>
+  </ul>
+  <ul class="nav top-menu">
+    <li class="nav-item <%= active_action?('home') %>">
+      <%= link_to 'Home', root_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item <%= active_action?('about') %>">
+      <%= link_to 'About', about_path, class: 'nav-link' %>
+    </li>
+    <li class="nav-item <%= active_action?('pricing') %>">
+      <%= link_to 'Pricing', pricing_path, class: 'nav-link' %>
+    </li>
+  </ul>
+</header>
