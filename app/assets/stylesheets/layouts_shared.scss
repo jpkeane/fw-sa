@@ -1,0 +1,8 @@
+.sessions-button{
+  @include media-breakpoint-down(sm) {
+    font-size: 0;
+  }
+  i{
+    font-size: 1rem;
+  }
+}

@@ -13,9 +13,11 @@
   <%= render 'layouts/sessions/header' %>
 
   <section class="content content--sessions">
-    <%= yield %>
+    <div class="content__inner">
+      <%= yield %>
 
-    <%= render 'layouts/sessions/footer' %>
+      <%= render 'layouts/sessions/footer' %>
+    </div>
   </section>
 </main>
 </body>
