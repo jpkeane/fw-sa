@@ -40,9 +40,9 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
-    annotate (2.6.5)
-      activerecord (>= 2.3.0)
-      rake (>= 0.8.7)
+    annotate (2.7.2)
+      activerecord (>= 3.2, < 6.0)
+      rake (>= 10.4, < 13.0)
     arel (8.0.0)
     ast (2.3.0)
     autoprefixer-rails (7.1.1)
@@ -59,7 +59,7 @@ GEM
     brakeman (3.6.2)
     builder (3.2.3)
     byebug (9.0.6)
-    capybara (2.14.0)
+    capybara (2.14.2)
       addressable
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -125,7 +125,7 @@ GEM
       ruby_dep (~> 1.2)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
-    mail (2.6.5)
+    mail (2.6.6)
       mime-types (>= 1.16, < 4)
     method_source (0.8.2)
     mime-types (3.1)
@@ -228,7 +228,7 @@ GEM
       tilt (>= 1.1, < 3)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
-    sidekiq (5.0.0)
+    sidekiq (5.0.2)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
       rack-protection (>= 1.5.0)
@@ -323,4 +323,4 @@ RUBY VERSION
    ruby 2.4.1p111
 
 BUNDLED WITH
-   1.15.0
+   1.15.1
