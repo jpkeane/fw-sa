@@ -14,6 +14,7 @@
 
   <section class="content content--full">
     <div class="content__inner">
+      <%= render 'layouts/shared/flash' %>
       <% if content_for(:title) %>
           <header class="content__title">
             <h1><%= yield(:title) %></h1>

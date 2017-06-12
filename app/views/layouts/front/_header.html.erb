@@ -4,15 +4,22 @@
   </div>
 
   <ul class="top-nav">
-    <%= link_to login_path, class: 'btn btn-info sessions-button' do %>
-        Log in
-        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
-    <% end %>
+    <% if logged_in? %>
+      <%= link_to dashboard_path, class: 'btn btn-info sessions-button' do %>
+          Dashboard
+          <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i>
+      <% end %>
+    <% else %>
+      <%= link_to login_path, class: 'btn btn-info sessions-button' do %>
+          Log in
+          <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
+      <% end %>
 
-    <a href src="#" class="btn btn-info sessions-button">
-      Sign up
-      <i class="zmdi zmdi-account zmdi-hc-fw"></i>
-    </a>
+      <a href src="#" class="btn btn-info sessions-button">
+        Sign up
+        <i class="zmdi zmdi-account zmdi-hc-fw"></i>
+      </a>
+    <% end %>
   </ul>
 
   <ul class="nav top-menu">

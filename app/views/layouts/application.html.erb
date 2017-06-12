@@ -15,14 +15,16 @@
 
 
   <section class="content content--full">
-    <% if content_for(:title) %>
-      <header class="content__title">
-        <h1><%= yield(:title) %></h1>
-      </header>
-    <% end %>
+    <div class="content__inner">
+      <%= render 'layouts/shared/flash' %>
+      <% if content_for(:title) %>
+          <header class="content__title">
+            <h1><%= yield(:title) %></h1>
+          </header>
+      <% end %>
 
-    <%= yield %>
-
+      <%= yield %>
+    </div>
     <%= render 'layouts/application/footer' %>
   </section>
 </main>
