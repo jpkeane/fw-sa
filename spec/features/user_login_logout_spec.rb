@@ -22,6 +22,42 @@ RSpec.feature 'User Login and Logout', type: :feature do
     expect(page).to have_content('You are already logged in')
   end
 
+  scenario 'User logs in with remembering' do
+    successful_sign_in(remember: true)
+    expect(Capybara.current_session.driver.request.cookies['remember_token']).not_to be_nil
+    successful_log_out
+    expect(Capybara.current_session.driver.request.cookies['remember_token']).to be_nil
+  end
+
+  scenario 'User logs in unsuccessfully' do
+    visit root_path
+    click_link 'Log in'
+    fill_in placeholder: 'Username or Email address', with: user.username
+    fill_in 'Password', with: 'notthepassword'
+    click_button 'Log in'
+    expect(page).to have_content('Invalid username or password ')
+  end
+
+  scenario 'User logs out successfully' do
+    successful_sign_in
+    successful_log_out
+    visit dashboard_path
+    expect(page).to have_content('You are not logged in')
+  end
+
+  scenario 'User logs out from all devices' do
+    successful_sign_in(remember: true)
+    2.times do
+      user.remember
+    end
+    expect(user.user_remember_tokens.count).to eq 3
+    visit dashboard_path
+    click_link 'Log out from all devices'
+    expect(user.user_remember_tokens.count).to eq 0
+  end
+
+  private
+
   def successful_sign_in(options = {})
     visit root_path
     click_link 'Log in'
