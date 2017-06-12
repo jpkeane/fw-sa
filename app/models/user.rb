@@ -25,9 +25,9 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 8 }, allow_nil: true
 
   has_many :user_remember_tokens
-  has_many :email_addresses, inverse_of: :user
+  has_many :user_email_addresses, inverse_of: :user
 
-  accepts_nested_attributes_for :email_addresses
+  accepts_nested_attributes_for :user_email_addresses
 
   class << self
     # Returns a random token.
@@ -41,7 +41,7 @@ class User < ApplicationRecord
   end
 
   def primary_email
-    email_addresses.find_by(primary: true)
+    user_email_addresses.find_by(primary: true)
   end
 
   def remember
