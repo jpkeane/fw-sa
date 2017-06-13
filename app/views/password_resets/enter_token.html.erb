@@ -1,15 +1,32 @@
 <% provide(:title, 'Reset password') %>
-<h1>Password reset</h1>
-
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: password_reset_token_path) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
+  <div class="col-md-4">
+    <div class="card login-helper">
+      <div class="card-header">
+        <h2 class="card-title">Description and help</h2>
+      </div>
+      <div class="card-block">
 
-        <%= f.label :password_reset_token %>
-        <%= f.text_field :password_reset_token, class: 'form-control' %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">Recover password</h2>
+      </div>
+      <div class="card-block">
+        <%= form_for(@user, url: password_reset_token_path) do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
 
-        <%= f.submit 'Submit Token', class: 'btn btn-primary' %>
-    <% end %>
+            <div class="form-group">
+              <%= f.text_field :password_reset_token, class: 'form-control', placeholder: 'Password reset token' %>
+              <i class="form-group__bar"></i>
+            </div>
+
+            <%= f.submit 'Submit Token', class: 'btn btn-primary btn-block' %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
