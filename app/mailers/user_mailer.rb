@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
 
   def password_reset_email(user)
     @user = user
-    @email_address = user.primary_email
+    @email_address = @user.primary_email
     mail to: @email_address.email_address, subject: 'Floworx SysArch - Reset Password'
   end
 
