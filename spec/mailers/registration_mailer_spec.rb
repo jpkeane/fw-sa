@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe RegistrationMailer, type: :mailer do
-  describe 'welcome_email' do
+  describe '#welcome_email' do
     let(:user) { FactoryGirl.create(:user) }
     let(:email) { FactoryGirl.create(:email_address, user: user) }
     let(:mail) { RegistrationMailer.welcome_email(email) }
