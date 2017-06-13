@@ -18,6 +18,9 @@ Rails.application.routes.draw do
   get 'privacy', to: 'front_pages#privacy'
   get 'terms', to: 'front_pages#terms'
 
+  get   '/register',  to: 'registrations#new',    as: :registration
+  post  '/register',  to: 'registrations#create', as: :registration_create
+
   get 'login', to: 'sessions#new'
   post '/login',                  to: 'sessions#create',              as: :login_create
   delete 'logout',                to: 'sessions#destroy',             as: :logout

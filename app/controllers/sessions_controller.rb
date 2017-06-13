@@ -34,7 +34,7 @@ class SessionsController < ApplicationController
 
   def user_to_sign_in(credential)
     if /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i =~ credential
-      UserEmailAddress.find_by(email_address: credential).user
+      EmailAddress.find_by(email_address: credential).user
     else
       User.find_by(username: credential.downcase)
     end

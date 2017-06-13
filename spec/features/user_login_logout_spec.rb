@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.feature 'User Login and Logout', type: :feature do
   let(:user) { FactoryGirl.create(:user, password: 'testpassword') }
-  let(:email) { FactoryGirl.create(:user_email_address, user: user) }
+  let(:email) { FactoryGirl.create(:email_address, user: user) }
 
   scenario 'User logs in successfully with username' do
     successful_sign_in

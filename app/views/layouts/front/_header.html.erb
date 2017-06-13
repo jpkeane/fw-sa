@@ -15,10 +15,10 @@
           <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
       <% end %>
 
-      <a href src="#" class="btn btn-info sessions-button">
-        Sign up
-        <i class="zmdi zmdi-account zmdi-hc-fw"></i>
-      </a>
+      <%= link_to registration_path, class: 'btn btn-info sessions-button' do %>
+          Sign up
+          <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
+      <% end %>
     <% end %>
   </ul>
 
