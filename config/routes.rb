@@ -34,4 +34,6 @@ Rails.application.routes.draw do
   patch 'password_reset',     to: 'password_resets#reset_password'
 
   get 'dashboard',    to: 'dashboards#show', as: :dashboard
+
+  get '/users/:username', to: 'users#show', as: :users_show
 end

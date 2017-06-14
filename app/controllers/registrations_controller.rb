@@ -3,6 +3,8 @@ class RegistrationsController < ApplicationController
   before_action      :guest_user_only, only: %i[new create]
   skip_after_action  :verify_authorized
 
+  layout 'sessions'
+
   def new
     @user = User.new
     @user.email_addresses.build
