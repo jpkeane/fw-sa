@@ -4,6 +4,11 @@
   </div>
 
   <ul class="top-nav">
+    <%= link_to users_edit_path(username: current_user.username), class: 'btn btn-info sessions-button' do %>
+        Edit Profile
+        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
+    <% end %>
+
     <%= link_to logout_path, class: 'btn btn-info sessions-button', method: :delete do %>
         Log out
         <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
@@ -17,7 +22,7 @@
 
   <ul class="nav top-menu">
     <li class="nav-item <%= active_action?('dashboard') %>">
-      <a href="#" class="nav-link">Dashboard</a>
+      <%= link_to 'Dashboard', dashboard_path, class: 'nav-link' %>
     </li>
   </ul>
 </header>

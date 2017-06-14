@@ -35,5 +35,7 @@ Rails.application.routes.draw do
 
   get 'dashboard',    to: 'dashboards#show', as: :dashboard
 
-  get '/users/:username', to: 'users#show', as: :users_show
+  get '/users/:username',           to: 'users#show',   as: :users_show
+  get '/users/:username/edit',      to: 'users#edit',   as: :users_edit
+  patch '/users/:username/update',  to: 'users#update', as: :users_update
 end
