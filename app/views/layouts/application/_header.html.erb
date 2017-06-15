@@ -9,6 +9,11 @@
         <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
     <% end %>
 
+    <%= link_to users_change_password_path(username: current_user.username), class: 'btn btn-info sessions-button' do %>
+        Edit Password
+        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
+    <% end %>
+
     <%= link_to logout_path, class: 'btn btn-info sessions-button', method: :delete do %>
         Log out
         <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
