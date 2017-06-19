@@ -4,22 +4,17 @@
   </div>
 
   <ul class="top-nav">
-    <%= link_to users_edit_path(username: current_user.username), class: 'btn btn-info sessions-button' do %>
-        Edit Profile
+    <%= link_to users_edit_path(username: current_user.username), class: 'btn btn-secondary sessions-button' do %>
+        Edit profile
         <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
     <% end %>
 
-    <%= link_to users_change_password_path(username: current_user.username), class: 'btn btn-info sessions-button' do %>
-        Edit Password
-        <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
-    <% end %>
-
-    <%= link_to logout_path, class: 'btn btn-info sessions-button', method: :delete do %>
+    <%= link_to logout_path, class: 'btn btn-secondary sessions-button', method: :delete do %>
         Log out
         <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
     <% end %>
 
-    <%= link_to logout_all_path, class: 'btn btn-info sessions-button', method: :delete do %>
+    <%= link_to logout_all_path, class: 'btn btn-secondary sessions-button', method: :delete do %>
         Log out from all devices
         <i class="zmdi zmdi-account-add zmdi-hc-fw"></i>
     <% end %>

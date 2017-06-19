@@ -8,7 +8,7 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
-<body data-ma-theme="blue-grey">
+<body data-ma-theme="green">
 <main class="main main--alt">
   <%= render 'layouts/application/header' %>
   <%= render 'layouts/application/right_bar' %>
@@ -17,12 +17,6 @@
   <section class="content content--full">
     <div class="content__inner">
       <%= render 'layouts/shared/flash' %>
-      <% if content_for(:title) %>
-          <header class="content__title">
-            <h1><%= yield(:title) %></h1>
-          </header>
-      <% end %>
-
       <%= yield %>
     </div>
     <%= render 'layouts/application/footer' %>

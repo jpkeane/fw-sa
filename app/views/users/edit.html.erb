@@ -1,31 +1,26 @@
 <% provide(:title, 'Edit user') %>
 <div class="row">
   <div class="col-md-4">
-    <div class="card login-helper">
-      <div class="card-header">
-        <h2 class="card-title">Description and help</h2>
-      </div>
-      <div class="card-block">
-
-      </div>
-    </div>
+    <%= render 'users/shared/user_edit_menu' %>
   </div>
   <div class="col-md-8">
     <div class="card">
       <div class="card-header">
-        <h2 class="card-title">Log in</h2>
+        <h2 class="card-title">Edit profile</h2>
       </div>
       <div class="card-block">
         <%= form_for(@user, url: users_update_path) do |f| %>
             <%= render 'shared/error_messages', object: f.object %>
 
             <div class="form-group">
-              <%= f.text_field :first_name, class: 'form-control', placeholder: 'First name' %>
+              <%= f.label :first_name %>
+              <%= f.text_field :first_name, class: 'form-control' %>
               <i class="form-group__bar"></i>
             </div>
 
             <div class="form-group">
-              <%= f.text_field :last_name, class: 'form-control', placeholder: 'Last name' %>
+              <%= f.label :last_name %>
+              <%= f.text_field :last_name, class: 'form-control' %>
               <i class="form-group__bar"></i>
             </div>
 

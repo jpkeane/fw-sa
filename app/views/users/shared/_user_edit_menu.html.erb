@@ -1,0 +1,12 @@
+<ul class="navigation">
+  <li class="navigation<%= active_action?('edit', '__active') %>">
+    <%= link_to users_edit_path do %>
+        <i class="zmdi zmdi-account-box"></i> Edit profile
+    <% end %>
+  </li>
+  <li class="navigation<%= active_action?('change_password', '__active') %>">
+    <%= link_to users_change_password_path do %>
+        <i class="zmdi zmdi-key"></i> Change password
+    <% end %>
+  </li>
+</ul>

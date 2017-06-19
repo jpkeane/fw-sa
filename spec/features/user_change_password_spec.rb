@@ -20,8 +20,6 @@ RSpec.feature 'User Change Password', type: :feature do
 
   scenario 'User logs in and edits password with wrong current password' do
     successful_sign_in_and_navigate
-    click_link 'Edit Profile'
-    click_link 'Password'
     fill_in 'Current password', with: 'NotThePassword'
     fill_in 'Password', with: 'NewTestPass'
     fill_in 'Password confirmation', with: 'NewTestPass'
@@ -56,7 +54,8 @@ RSpec.feature 'User Change Password', type: :feature do
     fill_in placeholder: 'Username or Email address', with: user.username
     fill_in 'Password', with: user.password
     click_button 'Log in'
-    click_link 'Edit Password'
+    click_link 'Edit profile'
+    click_link 'Change password'
   end
 
   def submit_password(expected_response)
