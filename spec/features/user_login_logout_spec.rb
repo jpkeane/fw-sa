@@ -52,6 +52,8 @@ RSpec.feature 'User Login and Logout', type: :feature do
     end
     expect(user.user_remember_tokens.count).to eq 3
     visit dashboard_path
+    click_link 'Edit profile'
+    click_link 'User security'
     click_link 'Log out from all devices'
     expect(user.user_remember_tokens.count).to eq 0
   end

@@ -25,4 +25,8 @@ class UserPolicy
   def update_password?
     edit?
   end
+
+  def security?
+    edit?
+  end
 end

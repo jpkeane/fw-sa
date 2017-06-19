@@ -1,0 +1,20 @@
+<% provide(:title, 'User security') %>
+<div class="row">
+  <div class="col-md-4">
+    <%= render 'users/shared/user_edit_menu' %>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-header">
+        <h2 class="card-title">User security</h2>
+      </div>
+      <div class="card-block">
+        <p>If you are concerned that a device you have previously been remembered on has been compromised, you can click the button below to sign out from all other sessions.</p>
+        <%= link_to logout_all_path, class: 'btn btn-danger btn-block', method: :delete do %>
+            Log out from all devices
+            <i class="zmdi zmdi-power zmdi-hc-fw"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

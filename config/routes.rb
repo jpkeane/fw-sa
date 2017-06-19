@@ -40,4 +40,5 @@ Rails.application.routes.draw do
   patch '/users/:username/update',  to: 'users#update', as: :users_update
   get '/users/:username/change_password', to: 'users#change_password', as: :users_change_password
   patch '/users/:username/change_password', to: 'users#update_password', as: :users_update_password
+  get '/users/:username/security',  to: 'users#security', as: :users_security
 end

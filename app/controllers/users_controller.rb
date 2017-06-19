@@ -36,6 +36,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def security
+    @user = User.find_by(username: params[:username])
+    authorize @user
+  end
+
   private
 
   def user_update_params

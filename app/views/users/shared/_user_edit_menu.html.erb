@@ -9,4 +9,9 @@
         <i class="zmdi zmdi-key"></i> Change password
     <% end %>
   </li>
+  <li class="navigation<%= active_action?('security', '__active') %>">
+    <%= link_to users_security_path do %>
+        <i class="zmdi zmdi-lock"></i> User security
+    <% end %>
+  </li>
 </ul>
