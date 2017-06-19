@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: email_addresses
+#
+#  id            :integer          not null, primary key
+#  email_address :string
+#  user_id       :integer
+#  primary       :boolean
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#
+
 class EmailAddress < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
